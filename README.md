@@ -150,10 +150,10 @@ Keep `.env` safe: Make sure that the file .env is not included in the version co
 ## Script `fetch_spacex_images.py`:
 The script downloads photos from the last launch [SpaceX REST API](https://github.com/r-spacex/SpaceX-API). If there were no photos at the last launch, then to download the photo, you need to specify the launch_id on which the launches were, for example:`61eefaa89eb1064137a1bd73`
 Example:
-``
+```
 python fetch_spacex_images.py
 Downloading images for the latest launch with ID: 62dd70d5202306255024d139
-``
+```
 
 ```
 python fetch_spacex_images.py --launch 61eefaa89eb1064137a1bd73
@@ -189,7 +189,7 @@ Downloaded images/epic_20250312020554.png
 ```
 
 ## Script `photo_of_space_bot.py`:
-The script adds a photo from the images directory to the telegram channel on behalf of the bot. To send a random photo, you need to write to the bot `/post'. To send the desired photo, you need to specify the name of the photo: `/post epic_20250310024318.png`
+The script adds a photo from the images directory to the telegram channel on behalf of the bot. To send a random photo, you need to write to the bot `/post`. To send the desired photo, you need to specify the name of the photo: `/post epic_20250310024318.png`
 Running the script:
 
 ```
