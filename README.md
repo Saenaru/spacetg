@@ -15,38 +15,38 @@
 ## Как установить
 
 1. Python3 должен быть уже установлен.
-2. Создайте виртуальное окружение venv для изоляции зависимостей
+2. Создайте виртуальное окружение venv для изоляции зависимостей.
 
-    ```bash
-    python -m venv .venv
-    ```
+```bash
+python -m venv .venv
+```
 
-    Активация виртуального окружения:
-    - На Windows:
-      ```bash
-      .venv\Scripts\activate
-      ```
-    - На MacOS и Linux:
-      ```bash
-      source .venv/bin/activate
-      ```
+Активация виртуального окружения:
+- На Windows:
+```bash
+.venv\Scripts\activate
+```
+- На MacOS и Linux:
+```bash
+source .venv/bin/activate
+```
 
-   Выполните команду:
-   ```bash
-   pip install -r requirements.txt
+Выполните команду:
+```bash
+pip install -r requirements.txt
    ```
 
 3. Это приложение использует файл .env для хранения конфиденциальных и конфигурируемых параметров настройки.
 
-   В корневом каталоге проекта создайте файл «token.env», каждая переменная среды указывается с новой строки в формате КЛЮЧ=значение. Пример:
+В корневом каталоге проекта создайте файл «token.env», каждая переменная среды указывается с новой строки в формате КЛЮЧ=значение. Пример:
 
-   ```plaintext
+```plaintext
 NASA_API_KEY=***
 TG_SPACE_TOKEN=***
 TG_CHANEL_NAME=***
-   ```
+```
 
-   Храните `.env` в безопасности: Убедитесь, что файл .env не попадает в систему контроля версий, как например Git, добавив его в .gitignore.
+Храните `.env` в безопасности: Убедитесь, что файл .env не попадает в систему контроля версий, как например Git, добавив его в .gitignore.
 
 ## Скрипт `fetch_spacex_images.py`:
 Скрипт скачивает фотографии с последнего запуска [SpaceX REST API](https://github.com/r-spacex/SpaceX-API). Если в последнем запуске не было фотографий, то для скачивания фото нужно указать launch_id, на котором были запуски, например:`61eefaa89eb1064137a1bd73`
@@ -116,36 +116,36 @@ The program connects to the NASA and SPACEX API and allows you to download photo
 1. Python3 must already be installed.
 2. Create a venv virtual environment to isolate dependencies
 
-    ```bash
-    python -m venv .venv
-    ```
+```bash
+python -m venv .venv
+```
 
-    Activating the virtual environment:
-    - On Windows:
-      ```bash
-      .venv\Scripts\activate
-      ``
+Activating the virtual environment:
+- On Windows:
+```bash
+.venv\Scripts\activate
+```
 - On macOS and Linux:
-      ```bash
-      source .venv/bin/activate
-      ```
+```bash
+source .venv/bin/activate
+```
 
-   Run the command:
-``bash
-   pip install -r requirements.txt
-   ```
+Run the command:
+```bash
+pip install -r requirements.txt
+```
 
 3. This application uses a file.env for storing confidential and configurable settings.
 
-   In the root directory of the project, create the "token.env" file. Each environment variable is specified from a new line in the KEY=value format. Example:
+In the root directory of the project, create the "token.env" file. Each environment variable is specified from a new line in the KEY=value format. Example:
 
-   ```plaintext
+```plaintext
 NASA_API_KEY=***
 TG_SPACE_TOKEN=***
 TG_CHANEL_NAME=***
-   ```
+```
 
-   Keep `.env` safe: Make sure that the file .env is not included in the version control system, such as Git, by adding it to .gitignore.
+Keep `.env` safe: Make sure that the file .env is not included in the version control system, such as Git, by adding it to .gitignore.
 
 ## Script `fetch_spacex_images.py`:
 The script downloads photos from the last launch [SpaceX REST API](https://github.com/r-spacex/SpaceX-API). If there were no photos at the last launch, then to download the photo, you need to specify the launch_id on which the launches were, for example:`61eefaa89eb1064137a1bd73`
@@ -181,7 +181,7 @@ NASA Фото 6 загружено и сохранено как 'images/nasa_apo
 Script downloads `epic` photos of earth [NASA EPIC API](https://api.nasa.gov/#epic). To run the script, you need to register and get an API Key.
 
 Example:
-``
+```
 python fetch_epic_images.py
 Downloaded images/epic_20250312001752.png
 Downloaded images/epic_20250312020554.png
