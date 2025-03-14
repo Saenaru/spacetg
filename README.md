@@ -106,7 +106,9 @@ python photo_of_space_infinite_bot.py --interval 10
 ```
 
 ## Цель проекта
-Код написан в образовательных целях на онлайн-курсе для веб-разработчиков dvmn.org.
+Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
+
+
 ---
 
 ## English
@@ -208,4 +210,4 @@ python photo_of_space_infinite_bot.py --interval 10
 ```
 
 ## Project Goals
-The code is written for educational purposes on online-course for web-developers dvmn.org.
+The code is written for educational purposes on online-course for web-developers [dvmn.org](https://dvmn.org/).
