@@ -3,6 +3,7 @@ from environs import Env
 from datetime import datetime, timedelta
 from handle_image_file import download_image, get_image_extension
 
+
 def fetch_nasa_images(api_key):
     end_date = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
     start_date = (datetime.today() - timedelta(days=35)).strftime('%Y-%m-%d')
@@ -27,11 +28,13 @@ def fetch_nasa_images(api_key):
         else:
             print(f"Пропуск файла {i+1}, так как это не изображение.")
 
+
 def main():
     env = Env()
     env.read_env("token.env")
     api_key = env.str("NASA_API_KEY")
     fetch_nasa_images(api_key)
+
 
 if __name__ == "__main__":
     main()
