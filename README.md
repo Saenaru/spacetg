@@ -1,4 +1,4 @@
-# Документация по коду `spacetg` / Code documentation `spacetg`
+# Документация по коду `Космический Телеграм` / Code documentation `Space Telegram`
 
 ## Оглавление / Table of Contents
 
@@ -104,6 +104,9 @@ python photo_of_space_bot.py
 ```
 python photo_of_space_infinite_bot.py --interval 10
 ```
+
+## Цель проекта
+Код написан в образовательных целях на онлайн-курсе для веб-разработчиков dvmn.org.
 ---
 
 ## English
@@ -203,3 +206,6 @@ Example:
 ```
 python photo_of_space_infinite_bot.py --interval 10
 ```
+
+## Project Goals
+The code is written for educational purposes on online-course for web-developers dvmn.org.
