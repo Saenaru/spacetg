@@ -15,18 +15,19 @@ def fetch_nasa_images(api_key):
     }
     response = requests.get(api_url, params=params)
     response.raise_for_status()
-    data = response.json()
-    for i, item in enumerate(data):
-        if item.get('media_type') == 'image' and 'url' in item:
-            photo_url = item['url']
-            save_path = f'images/nasa_apod_{i}{get_image_extension(photo_url)}'
-            try:
-                download_image(photo_url, save_path)
-                print(f"NASA Фото {i+1} загружено и сохранено как '{save_path}'.")
-            except requests.HTTPError as e:
-                print(f"Не удалось загрузить NASA фото {i+1}: {e}")
-        else:
-            print(f"Пропуск файла {i+1}, так как это не изображение.")
+    apod_images = response.json()
+    for image_index, image_metadata in enumerate(apod_images, start=1):
+        if image_metadata.get('media_type') != 'image' or 'url' not in image_metadata:
+            print(f"Пропуск файла {image_index}, так как это не изображение.")
+            continue
+        image_url = image_metadata['url']
+        image_extension = get_image_extension(image_url)
+        save_path = f'images/nasa_apod_{image_index}{image_extension}'
+        try:
+            download_image(image_url, save_path)
+            print(f"NASA Фото {image_index} загружено и сохранено как '{save_path}'.")
+        except requests.HTTPError as e:
+            print(f"Не удалось загрузить NASA фото {image_index}: {e}")
 
 
 def main():

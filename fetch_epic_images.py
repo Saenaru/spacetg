@@ -1,24 +1,24 @@
 import requests
-import os
 from environs import Env
 from datetime import datetime
 from handle_image_file import download_image
 
 
 def download_epic_images(api_key, limit=10):
-    api_url = f"https://api.nasa.gov/EPIC/api/natural?api_key={api_key}"
-    response = requests.get(api_url)
+    base_api_url = "https://api.nasa.gov/EPIC/api/natural"
+    response = requests.get(base_api_url, params={'api_key': api_key})
     response.raise_for_status()
-    epic_data = response.json()
+    epic_images = response.json()
     count = 0
-    for item in epic_data:
+    for epic_image in epic_images:
         if count >= limit:
             break
-        identifier = item['identifier']
-        date_str = item['date']
+        identifier = epic_image['identifier']
+        date_str = epic_image['date']
         date_time = datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S')
         date_path = date_time.strftime('%Y/%m/%d')
-        image_url = f"https://api.nasa.gov/EPIC/archive/natural/{date_path}/png/epic_1b_{identifier}.png?api_key={api_key}"
+        image_base_url = f"https://api.nasa.gov/EPIC/archive/natural/{date_path}/png/epic_1b_{identifier}.png"
+        image_url = requests.Request('GET', image_base_url, params={'api_key': api_key}).prepare().url
         save_path = f"images/epic_{identifier}.png"
         try:
             download_image(image_url, save_path)

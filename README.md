@@ -43,7 +43,6 @@ pip install -r requirements.txt
 ```plaintext
 NASA_API_KEY=***
 TG_SPACE_TOKEN=***
-TG_CHANEL_NAME=***
 ```
 
 Храните `.env` в безопасности: Убедитесь, что файл .env не попадает в систему контроля версий, как например Git, добавив его в .gitignore.
@@ -147,7 +146,6 @@ In the root directory of the project, create the "token.env" file. Each environm
 ```plaintext
 NASA_API_KEY=***
 TG_SPACE_TOKEN=***
-TG_CHANEL_NAME=***
 ```
 
 Keep `.env` safe: Make sure that the file .env is not included in the version control system, such as Git, by adding it to .gitignore.
